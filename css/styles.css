@@ -1,0 +1,789 @@
+
+body {
+    margin: 10px;
+    padding-bottom: 80px; /* Always present to avoid overlap */
+    transition: background-color 0.6s, color 0.6s;
+}
+
+.container {
+    max-width: 1200px;
+}
+
+#paymentForm {
+    display: block; /* Initially show the form */
+}
+
+h3 {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+/* =========================================
+   Table Styling
+   ========================================= */
+
+.table td, .table th {
+    vertical-align: middle;
+}
+
+.table tr:nth-child(odd) {
+    background-color: #f9f9f9; /* Alternating row color */
+}
+
+.table th {
+    position: sticky;
+    top: 0;
+    background-color: #ffffff;
+    z-index: 1;
+    padding: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Sticky Action Column */
+.sticky-action {
+    position: sticky;
+    left: 0;
+    background-color: #f8f9fa;
+    z-index: 2;
+    border-right: 1px solid #dee2e6;
+}
+
+/* =========================================
+   Buttons and Inputs
+   ========================================= */
+
+button {
+    transition: background-color 0.6s ease, box-shadow 0.6s ease, transform 0.6s ease;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #0056b3; 
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* Calculate Button */
+#calculateButton {
+    font-size: 16px;
+    position: relative;
+    width: auto;
+    padding: 10px 20px;
+    transition: all 0.6s ease;
+}
+
+/* Inputs and Selects */
+.form-group {
+    width: 100%;
+}
+
+
+.form-group select {
+    padding-left: 10px;
+    padding-right: 1px;
+    width: 100%; 
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    color: #555555;
+    background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none"%3E%3Cpath d="M5 7l5 5 5-5H5z" fill="%23666"/%3E%3C/svg%3E');
+    background-repeat: no-repeat;
+    background-position: right 10px center; 
+    background-size: 20px 20px;
+    z-index: 10;
+
+}
+
+/* Input Groups */
+
+.input-group-text {
+    font-size: 1.2em;
+    color: #000;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    background-color: #ffffff;
+    transition: fill 0.6s;
+}
+
+.input-group-prepend .amount-icon {
+    font-size: 1.2em;
+    background-color: #f0f0f0;
+    color: #555555;
+    border-radius: 4px 0 0 4px;
+    min-width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.input-group-prepend .name-label {
+    font-size: 0.9em;
+    background-color: #e0e0e0;
+    color: #333333;
+    border-radius: 4px 0 0 4px;
+    min-width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 8px;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+/* =========================================
+   Chips
+   ========================================= */
+
+.chip-container {
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    padding: 8px;
+    background-color: #ffffff;
+}
+
+.chip {
+    display: flex;
+    align-items: center;
+    background-color: #e0e0e0;
+    color: #333;
+    border-radius: 16px;
+    padding: 4px 8px;
+    margin: 4px;
+    font-size: 0.9em;
+    animation: fadeIn 0.6s ease;
+    transition: background-color 0.6s, color 0.6s;
+}
+
+.chip .close-btn {
+    background: none;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+    margin-left: 4px;
+    font-size: 1.2em;
+    line-height: 0;
+    color: inherit;
+}
+
+.chip-input {
+    border: none;
+    outline: none;
+    flex: 1;
+    padding: 4px;
+    min-width: 100px;
+    background-color: #ffffff;
+}
+
+/* =========================================
+   Payments and Actions
+   ========================================= */
+
+#paymentsList {
+    font-size: 14px;
+}
+
+.payment-row {
+    margin-bottom: 10px;
+}
+
+.payment-row a {
+    color: red;
+    text-decoration: none;
+}
+
+.payment-row a:hover {
+    text-decoration: underline;
+}
+
+.actions-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.total-expense-summary {
+    text-align: right;
+    font-size: 1em;
+    margin-left: auto;
+}
+
+.total-expense-label {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+#totalExpense {
+    font-weight: normal;
+}
+
+/* =========================================
+   Balance Indicators
+   ========================================= */
+
+.balance-positive {
+    color: #28a745;
+    font-weight: bold;
+}
+
+.balance-negative {
+    color: #dc3545;
+    font-weight: bold;
+}
+
+.balance-zero {
+    color: #000000;
+    font-weight: bold;
+}
+
+.remaining {
+    text-align: right;
+    font-weight: bold;
+}
+
+.remaining-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* =========================================
+   Icons and Toggles
+   ========================================= */
+
+.icon-btn {
+    border: none;
+    background: transparent;
+    padding: 0;
+}
+
+.settlement-header {
+    display: flex;
+    align-items: center;
+    gap: 10px; 
+}
+
+.download-icon {
+    cursor: pointer;
+    vertical-align: middle;
+    width: 30px;
+    height: 30px;
+    fill: #000000;
+    transition: fill 0.6s;
+}
+
+.recordpayment-icon path {
+    fill: #000000; /* Light mode icon */
+}
+
+/* Toggle Icon */
+.toggle-icon {
+    position: fixed;
+    bottom: 40px;
+    left: 40px;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    transition: transform 0.6s;
+    z-index: 1050
+}
+
+/* =========================================
+   Animations
+   ========================================= */
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; transform: scale(1); }
+    to { opacity: 0; transform: scale(0.9); }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+}
+
+/* Slide Effects for Payment Form */
+#paymentFormContent {
+    display: none;  /* Initially hidden */
+    transition: all 0.6s ease-in-out;
+}
+
+.slide-in {
+    animation: slideIn 0.6s ease forwards;
+}
+
+.slide-out {
+    animation: slideOut 0.6s ease forwards;
+}
+
+.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.dark-mode .table tr:nth-child(odd) {
+    background-color: #000000;
+}
+
+.dark-mode .table {
+    background-color: #1e1e1e;
+    color: #ffffff;
+}
+
+.dark-mode .sticky-action {
+    background-color: #1e1e1e;
+    border-right: 1px solid #dee2e6;
+}
+
+.dark-mode .input-group-text {
+    color: #ffffff;
+    background-color: #1e1e1e;
+}
+
+.dark-mode .chip {
+    background-color: #555555;
+    color: #ffffff;
+}
+
+.dark-mode .download-icon {
+    fill: #ffffff;
+}
+
+.dark-mode .copy-icon {
+    fill: #ffffff;
+}
+
+.dark-mode .balance-zero {
+    color: #ffffff;
+}
+
+.dark-mode .balance-positive {
+    color: #85e085;
+}
+
+.dark-mode .balance-negative {
+    color: #ff6666;
+}
+
+.dark-mode hr {
+    background-color: #ffffff;
+    opacity: 0.5;
+}
+
+.dark-mode .recordpayment-icon path {
+    fill: #ffffff;
+}
+
+.dark-mode,
+.dark-mode .table,
+.dark-mode .sticky-action,
+.dark-mode .input-group-text,
+.dark-mode .chip,
+.dark-mode .download-icon,
+.dark-mode .copy-icon,
+.dark-mode .balance-zero,
+.dark-mode .balance-positive,
+.dark-mode .balance-negative,
+.dark-mode hr,
+.dark-mode .recordpayment-icon path {
+    transition: all 0.6s ease-in-out;
+}
+
+.dark-mode button,
+.dark-mode select,
+.dark-mode input,
+.dark-mode textarea {
+    transition: background-color 0.6s ease, color 0.6s ease, border 0.6s ease;
+}
+
+/* =========================================
+   Form Layout
+   ========================================= */
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin-bottom: 0px;
+}
+
+.form-group .btn {
+    width: 100%;
+    max-width: 200px;
+    margin-top: 5px;
+    margin-left: auto;
+}
+
+/* =========================================
+   Responsive Adjustments
+   ========================================= */
+
+/* Extra small devices (max-width: 576px) */
+@media (max-width: 576px) {
+    .form-row {
+        flex-direction: column;
+    }
+
+    .form-row .form-group {
+        margin-bottom: 5px;
+    }
+
+    #calculateButton {
+        font-size: 14px;
+        padding: 10px 15px;
+        transition: all 0.6s ease;
+    }
+
+    #calculateButton span {
+        position: absolute;
+        left: -9999px; /* Hide original text off-screen */
+    }
+
+    #calculateButton::after {
+        content: "Calculate";
+        position: relative;
+        visibility: visible;
+    }
+}
+
+/* Small to Medium devices (max-width: 768px) */
+@media (max-width: 768px) {
+    body {
+        /* padding-bottom removed */
+    }
+
+    .toggle-icon {
+        position: fixed;
+        bottom: 25px;
+        left: 25px;
+        width: 48px;
+        height: 48px;
+        z-index: 1000;
+        background-color: rgba(200, 200, 200, 0.95);
+        color: #333;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+        transition: transform 0.6s ease, background-color 0.6s ease;
+    }
+
+    .toggle-icon svg {
+        width: 24px;
+        height: 24px;
+        fill: #333333;
+    }
+}
+
+.error-field {
+    border: 1px solid red !important;
+    box-shadow: 0 0 4px rgba(255, 0, 0, 0.4);
+}
+
+/* Toast Message Styling */
+.toast-message {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+    padding: 15px 25px;
+    border-radius: 8px;
+    color: #fff;
+    background-color: #dc3545; /* Error by default */
+    font-size: 16px;
+    opacity: 0;
+    transition: all 0.6s ease-in-out;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+.toast-message.visible {
+    opacity: 1;
+}
+.toast-message.warning {
+    background-color: #ffc107; /* Warning */
+}
+.toast-message.success {
+    background-color: #28a745; /* Success */
+}
+
+/* General Icon Hover Effect */
+svg {
+    transition: transform 0.2s ease, fill 0.2s ease;
+    cursor: pointer;
+}
+
+svg:hover {
+    transform: scale(1.05);
+    fill: #007bff; /* Highlight color (change as needed) */
+}
+
+/* Special Case: Dark Mode Icons */
+.dark-mode svg:hover {
+    fill: #ffcc00; /* Different highlight for dark mode */
+}
+
+.expense-header-title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    margin-top: 50px; /* Adds spacing below the navbar */
+    background: linear-gradient(to right, #00c6ff, #0072ff, #a855f7, #ff2e63); /* Bright multi-color gradient */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: block;
+    text-align: center;
+}
+
+.expense-header-secondary {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    color: #333; /* Dark text color without gradient */
+}
+
+.icon-container {
+    position: relative;
+    display: inline-block;
+}
+
+.icon-container:hover {
+    background-color: rgba(98, 98, 98, 0.1); /* Light highlight */
+    border-radius: 6px;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.tooltip {
+    visibility: hidden;
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 6px 10px;
+    border-radius: 4px;
+    position: absolute;
+    z-index: 100;
+    font-size: 12px;
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.1s ease-in-out, visibility 0.1s ease-in-out;
+}
+
+/* Triangular Tip */
+.tooltip::after {
+    content: "";
+    position: absolute;
+    top: 100%; /* Position at bottom of tooltip */
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 6px;
+    border-style: solid;
+    border-color: black transparent transparent transparent;
+}
+
+.icon-container:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+.dark-mode .tooltip {
+    background-color: #ffffff; 
+    color: #000000;  
+}
+
+.dark-mode .tooltip::after {
+    border-color: #ffffff transparent transparent transparent; 
+}
+
+
+.icon-animate {
+    animation: fadeInOut 1s ease-in-out;
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.2); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+
+.dark-mode .expense-header-title {
+    background: linear-gradient(to left, #00c6ff, #0072ff, #a855f7, #ff2e63);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.dark-mode .expense-header-secondary {
+    color: #60a5fa; /* Light yellow for better visibility */
+}
+
+.toast-close {
+    background: transparent;
+    border: none;
+    font-size: 16px;
+    color: #fff;
+    cursor: pointer;
+    margin-left: 10px;
+    padding: 0 4px; /* Adjusted horizontal clickable area to 4px */
+}
+
+.toast-text {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.toast-message {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 25px;
+}
+
+/* Updated Spotify Card Styling */
+#spotify-card {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    background: #282828; /* Spotify dark background */
+    color: #ffffff;
+    border-radius: 12px;
+    padding: 10px 16px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+    transition: transform 0.3s ease-in-out;
+    z-index: 1050
+}
+
+#spotify-card:hover {
+    transform: translateY(-5px);
+}
+
+#spotify-card img {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    margin-right: 12px;
+}
+
+#spotify-card .track-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#spotify-card .track-name {
+    font-weight: 600;
+    font-size: 1em;
+    margin-bottom: 1px;
+}
+
+#spotify-card .track-artist {
+    font-size: 0.85em;
+    color: #b3b3b3;
+    margin-bottom: 6px;
+}
+
+#spotify-card a#spotify-link {
+    color: #1DB954;
+    text-decoration: none;
+    font-size: 0.9em;
+    transition: color 0.3s ease;
+}
+
+#spotify-card a#spotify-link:hover {
+    color: #1ed760;
+    text-decoration: underline;
+}
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  
+  /* Dark mode Spotify Card */
+.dark-mode #spotify-card {
+    background: #1E1E1E; /* Darker background for better contrast */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.7);
+}
+
+.dark-mode #spotify-card .track-name {
+    color: #ffffff;
+}
+
+.dark-mode #spotify-card .track-artist {
+    color: #bbbbbb;
+}
+
+.dark-mode #spotify-card a#spotify-link {
+    color: #1DB954; /* Spotify green remains visible */
+}
+
+/* Responsive Spotify Card for mobile */
+@media (max-width: 576px) {
+    #spotify-card {
+        bottom: 15px;
+        right: 15px;
+        padding: 6px 10px;
+        border-radius: 8px;
+    }
+
+    #spotify-card img {
+        width: 50px;
+        height: 50px;
+        margin-right: 8px;
+    }
+
+    #spotify-card .track-name {
+        font-size: 0.85em;
+        margin-bottom: 1px;
+    }
+
+    #spotify-card .track-artist {
+        font-size: 0.75em;
+        margin-bottom: 4px;
+    }
+
+    #spotify-card a#spotify-link {
+        font-size: 0.75em;
+    }
+}
