@@ -80,10 +80,10 @@ Imagine a trip where three friends, Alice, Bob, and Charlie, share various expen
 - **JavaScript** and **jQuery** for client-side logic and interactivity.
 
 ## License
-This project is licensed under the MIT License. Feel free to use and modify it as per your requirements.
+This project is licensed under the Apache License. Feel free to use and modify it as per your requirements.
 
 ## Contact
-For further questions or feedback, please contact [vantough@gmail.com](mailto:vantough@gmail.com).
+For further questions or feedback, please contact [kushagrakumar110@gmail.com](mailto:kushagrakumar110@gmail.com).
 
 ---
 
