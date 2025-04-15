@@ -786,21 +786,4 @@ svg:hover {
     #spotify-card a#spotify-link {
         font-size: 0.75em;
     }
-    /* Differentiate the album cover from the logo */
-    #spotify-card .album-cover {
-    width: 60px;
-    height: 60px;
-    border-radius: 8px;
-    margin-right: 12px;
-  }
-  
-    /* Absolute position for the small Spotify logo */
-    #spotify-card .spotify-logo {
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    width: 20px;
-    height: 20px;
-    opacity: 0.9;
-  } 
 }
