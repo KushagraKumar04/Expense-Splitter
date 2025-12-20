@@ -46,6 +46,12 @@
     { "src": "/api/(.*)", "dest": "js/server.js" },
     { "src": "/css/(.*)", "dest": "/css/$1" },
     { "src": "/js/(.*)", "dest": "/js/$1" },
+    { "src": "/favicon.ico", "dest": "/favicon.ico" },
+    { "src": "/favicon-16x16.png", "dest": "/favicon-16x16.png" },
+    { "src": "/favicon-32x32.png", "dest": "/favicon-32x32.png" },
+    { "src": "/apple-touch-icon.png", "dest": "/apple-touch-icon.png" },
+    { "src": "/android-chrome-192x192.png", "dest": "/android-chrome-192x192.png" },
+    { "src": "/android-chrome-512x512.png", "dest": "/android-chrome-512x512.png" },
     { "src": "/(.*)", "dest": "/index.html" }
   ]
 }
