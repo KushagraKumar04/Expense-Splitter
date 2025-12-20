@@ -16,6 +16,30 @@
     {
       "src": "js/**",
       "use": "@vercel/static"
+    },
+    {
+      "src": "favicon.ico",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "favicon-16x16.png",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "favicon-32x32.png",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "apple-touch-icon.png",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "android-chrome-192x192.png",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "android-chrome-512x512.png",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
