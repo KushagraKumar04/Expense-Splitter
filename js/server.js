@@ -75,3 +75,8 @@ app.get('/api/random-track', async (req, res) => {
   });
 
   module.exports = app;
+
+// Start the server
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
