@@ -7,6 +7,8 @@ require('dotenv').config(); // load environment variables from .env
 // Initialize the express app FIRST
 const app = express();
 const PORT = process.env.PORT || 3000;
+
+// Serve static files from the 'public' directory
 app.use(express.static('public'));
 
 // Middleware setup AFTER initializing the app
