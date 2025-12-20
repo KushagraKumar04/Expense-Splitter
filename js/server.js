@@ -7,6 +7,7 @@ require('dotenv').config(); // load environment variables from .env
 // Initialize the express app FIRST
 const app = express();
 const PORT = process.env.PORT || 3000;
+app.use(express.static('public'));
 
 // Middleware setup AFTER initializing the app
 app.use(cors());
