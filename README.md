@@ -2,7 +2,7 @@
 # Expense Splitter
 
 ## Overview
-The **Expense Splitter** is a web-based application designed to help users easily split expenses among a group of people. This tool simplifies expense management by allowing users to enter expenses, select different split methods, and calculate balances and settlements efficiently.
+The **Expense Splitter** is a web-based application designed for helping users easily split expenses among a group of people. This tool simplifies expense management by allowing users to enter expenses, select different split methods, and calculate balances and settlements efficiently.
 
 ## Features
 - **User-Friendly Interface**: Leveraging Bootstrap for a clean, responsive design .
